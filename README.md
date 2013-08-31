@@ -68,19 +68,24 @@ Returns boolean indicating whether the list contains the given item.
 
 Returns the index of the given item or `-1` if it is not in the list.
 
+### .get(id)
+
+Get an item identified by the given id.
+
 ### .identify
 
 Function used to uniquely identify an item.
 
 ```js
+var list = listable();
+
 list.identify = function (item) {
     return item.id;
 };
+
+list.add({ id: 1, foo: 'bar' });
+list.get(1) // => { foo: 'bar' }
 ```
-
-### .get(id)
-
-Get an item identified by the given id.
 
 ## License
 
