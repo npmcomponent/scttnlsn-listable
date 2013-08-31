@@ -68,6 +68,10 @@ Returns boolean indicating whether the list contains the given item.
 
 Returns the index of the given item or `-1` if it is not in the list.
 
+### .sort(comparator, options)
+
+Sort the items in the list according to the comparator function.  Emits `reset` event unless `silent: true` is passed as an option.
+
 ### .get(id)
 
 Get an item identified by the given id.

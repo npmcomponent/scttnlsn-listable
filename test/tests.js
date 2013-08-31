@@ -179,4 +179,41 @@ describe('Listable', function () {
             assert(this.list.size() === 2);
         });
     });
+
+    describe('.sort', function () {
+        beforeEach(function () {
+            this.a = { n: 2 };
+            this.b = { n: 1 };
+            this.list.add(this.a);
+            this.list.add(this.b);
+        });
+
+        it('orders items', function () {
+            this.list.sort(function (a, b) {
+                return a.n === b.n ? 0 : (a.n < b.n ? -1 : 1);
+            });
+
+            assert(this.list.at(0) === this.b);
+            assert(this.list.at(1) === this.a);
+        });
+
+        it('emits reset event', function (done) {
+            this.list.on('reset', function () {
+                done();
+            });
+
+            this.list.sort();
+        });
+
+        it('does not emit reset event when silent', function () {
+            var emitted = false;
+
+            this.list.on('reset', function () {
+                emitted = true;
+            });
+
+            this.list.sort(undefined, { silent: true });
+            assert(emitted === false);
+        });
+    });
 });

@@ -95,6 +95,12 @@ module.exports = function (obj) {
         return this.items.length;
     };
 
+    obj.sort = function (comparator, options) {
+        options || (options = {});
+        this.items.sort(comparator);
+        if (!options.silent) this.emit('reset');
+    };
+
     return obj;
 };
 
