@@ -1,0 +1,18 @@
+{
+    "name": "listable",
+    "version": "0.1.0",
+    "description": "Add an ordered list of items to on object",
+
+    "dependencies": {
+        "component/bind": "*",
+        "component/emitter": "*",
+        "component/enumerable": "*",
+        "component/type": "*"
+    },
+
+    "development": {
+        "component/assert": "*"
+    },
+
+    "scripts": ["index.js"]
+}
