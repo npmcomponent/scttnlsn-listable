@@ -76,8 +76,12 @@ module.exports = function (obj) {
     };
 
     obj.reset = function (items, options) {
+        items || (items = []);
         options || (options = {});
-        this.items = items || [];
+        
+        if (type(items) !== 'array') throw new Error('Must reset list with array');
+
+        this.items = items;
         if (!options.silent) this.emit('reset');
     };
 

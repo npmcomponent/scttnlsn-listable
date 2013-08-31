@@ -145,6 +145,18 @@ describe('Listable', function () {
             this.list.reset([], { silent: true });
             assert(emitted === false);
         });
+
+        it('throws error when resetting with non-array', function () {
+            var error = false;
+
+            try {
+                this.list.reset({});
+            } catch (err) {
+                error = !!err;
+            }
+
+            assert(error);
+        });
     });
 
     describe('.identify', function () {
