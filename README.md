@@ -38,19 +38,19 @@ var l = new List([{ foo: 'bar' }, { baz: 'qux' }]);
 
 ### .add(item)
 
-Add single item to list.  Emits `add` event.
+Add single item to list.  Emits `add` event unless `silent: true` is passed as an option.
 
 ### .add([items])
 
-Add multiple items to list.  Emits `add` event for each item.
+Add multiple items to list.  Emits `add` event for each item unless `silent: true` is passed as an option.
 
 ### .remove(item)
 
-Remove and item from the list.  Emits `remove` event.
+Remove and item from the list.  Emits `remove` event unless `silent: true` is passed as an option.
 
 ### .reset([items])
 
-Reset the entire list with the given items.  Emits `reset` event.
+Reset the entire list with the given items.  Emits `reset` event unless `silent: true` is passed as an option.
 
 ### .at(index)
 

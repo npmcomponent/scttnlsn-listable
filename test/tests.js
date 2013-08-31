@@ -48,6 +48,17 @@ describe('Listable', function () {
 
             this.list.add({ foo: 'bar' });
         });
+
+        it('does not emit add event when silent', function () {
+            var emitted = false;
+
+            this.list.on('add', function () {
+                emitted = true;
+            });
+
+            this.list.add({ foo: 'bar' }, { silent: true });
+            assert(emitted === false);
+        });
     });
 
     describe('.remove', function () {
@@ -71,6 +82,17 @@ describe('Listable', function () {
                 });
 
                 this.list.remove(this.a);
+            });
+
+            it('does not emit remove event when silent', function () {
+                var emitted = false;
+
+                this.list.on('remove', function () {
+                    emitted = true;
+                });
+
+                this.list.remove(this.a, { silent: true });
+                assert(emitted === false);
             });
         });
 
@@ -111,6 +133,17 @@ describe('Listable', function () {
             });
 
             this.list.reset();
+        });
+
+        it('does not emit reset event when silent', function () {
+            var emitted = false;
+
+            this.list.on('reset', function () {
+                emitted = true;
+            });
+
+            this.list.reset([], { silent: true });
+            assert(emitted === false);
         });
     });
 

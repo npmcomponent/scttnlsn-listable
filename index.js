@@ -43,7 +43,8 @@ module.exports = function (obj) {
         }
     };
 
-    obj.add = function (item) {
+    obj.add = function (item, options) {
+        options || (options = {});
         this.items || (this.items = []);
 
         var add = function (item) {
@@ -51,7 +52,7 @@ module.exports = function (obj) {
                 this.items.push(item);
                 index.call(this, item);
 
-                this.emit('add', item);
+                if (!options.silent) this.emit('add', item);
             }
         };
 
@@ -62,20 +63,22 @@ module.exports = function (obj) {
         }
     };
 
-    obj.remove = function (item) {
+    obj.remove = function (item, options) {
+        options || (options = {});
         this.items || (this.items = []);
 
         if (this.has(item)) {
             var index = this.items.indexOf(item);
             this.items.splice(index, 1);
             unindex.call(this, item);
-            this.emit('remove', item);
+            if (!options.silent) this.emit('remove', item);
         }
     };
 
-    obj.reset = function (items) {
+    obj.reset = function (items, options) {
+        options || (options = {});
         this.items = items || [];
-        this.emit('reset');
+        if (!options.silent) this.emit('reset');
     };
 
     obj.at = function (i) {
