@@ -81,3 +81,7 @@ list.identify = function (item) {
 ### .get(id)
 
 Get an item identified by the given id.
+
+## License
+
+MIT
