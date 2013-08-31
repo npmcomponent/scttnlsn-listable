@@ -84,7 +84,7 @@ list.identify = function (item) {
 };
 
 list.add({ id: 1, foo: 'bar' });
-list.get(1) // => { foo: 'bar' }
+list.get(1) // => { id: 1, foo: 'bar' }
 ```
 
 ## License
