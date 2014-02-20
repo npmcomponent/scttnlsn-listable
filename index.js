@@ -1,7 +1,7 @@
-var bind = require('bind');
-var emitter = require('emitter');
-var enumerable = require('enumerable');
-var type = require('type');
+var bind = require('component-bind');
+var emitter = require('component-emitter');
+var enumerable = require('component-enumerable');
+var type = require('component-type');
 
 module.exports = function (obj) {
     obj || (obj = {});

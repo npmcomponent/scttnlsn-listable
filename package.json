@@ -1,0 +1,11 @@
+{
+  "name": "scttnlsn-listable",
+  "description": "Add an ordered list of items to on object",
+  "version": "0.1.0",
+  "dependencies": {
+    "component-bind": "git://github.com/npmcomponent/component-bind.git",
+    "component-emitter": "git://github.com/npmcomponent/component-emitter.git",
+    "component-enumerable": "git://github.com/npmcomponent/component-enumerable.git",
+    "component-type": "git://github.com/npmcomponent/component-type.git"
+  }
+}
